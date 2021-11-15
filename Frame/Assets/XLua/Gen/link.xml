@@ -1,0 +1,10 @@
+﻿
+
+<linker>
+
+	<assembly fullname="Assembly-CSharp">
+	    <type fullname="RestoryStudio.LuaDefine" preserve="all"/>
+		
+	</assembly>
+
+</linker>
