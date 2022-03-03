@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using UnityEngine.Playables;
 
 namespace GameFrame
 {
@@ -54,5 +55,12 @@ namespace GameFrame
         }
 
         #endregion
+        
+        public static T GetScriptBehaviour<T>(this Playable playable)
+            where T : class, IPlayableBehaviour, new()
+        {
+            ScriptPlayable<T> scriptPlayable = (ScriptPlayable<T>) playable;
+            return scriptPlayable.GetBehaviour();
+        }
     }
 }

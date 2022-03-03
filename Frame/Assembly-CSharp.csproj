@@ -41,6 +41,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\UI\IUITransition.cs" />
      <Compile Include="Assets\Scripts\Config\IConfig.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\util\Xxtea.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\LuaDLL.cs" />
@@ -48,19 +49,24 @@
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Actions\Breakpoint.cs" />
      <Compile Include="Assets\XLua\Gen\EnumWrap.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\MethodWarpsCache.cs" />
+     <Compile Include="Assets\Scripts\Flux\DispatchCenter.cs" />
+     <Compile Include="Assets\Scripts\Flux\Flux.cs" />
      <Compile Include="Assets\Scripts\Utilities.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Composites\InterruptSelector.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Actions\Log.cs" />
      <Compile Include="Assets\XLua\Gen\PackUnpack.cs" />
+     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Failure.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Composites\Sequencer.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\ActionNode.cs" />
+     <Compile Include="Assets\Scripts\Flux\IDispatchCenter.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\BehaviourTree.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\CompositeNode.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\LuaFunction.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\ObjectCasters.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\SignatureLoader.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\TypeExtensions.cs" />
+     <Compile Include="Assets\Scripts\GlobalManager\IInitializeManager.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\Blackboard.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\CodeEmit.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\LuaException.cs" />
@@ -69,6 +75,7 @@
      <Compile Include="Assets\XLua\Lib\XLua\Src\InternalGlobals.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\Node.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Composites\Selector.cs" />
+     <Compile Include="Assets\Scripts\GlobalManager\IUpdateManager.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\ObjectTranslatorPool.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\LuaTable.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\RootNode.cs" />
@@ -77,6 +84,7 @@
      <Compile Include="Assets\XLua\Lib\XLua\Src\RawObject.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\TemplateEngine\TemplateEngine.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\DecoratorNode.cs" />
+     <Compile Include="Assets\Scripts\UI\EUIType.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Actions\RandomPosition.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Inverter.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\ObjectPool.cs" />
@@ -86,42 +94,39 @@
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Succeed.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Timeout.cs" />
      <Compile Include="Assets\XLua\XLuaManager.cs" />
+     <Compile Include="Assets\Scripts\GlobalManager\IResetManager.cs" />
+     <Compile Include="Assets\Scripts\Recycle\IRecycle.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Actions\Wait.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\GenAttributes.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Repeat.cs" />
+     <Compile Include="Assets\Scripts\Flux\ActionType.cs" />
      <Compile Include="Assets\XLua\Lua.cs" />
      <Compile Include="Assets\XLua\Gen\WrapPusher.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\NodePort.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\ObjectTranslator.cs" />
+     <Compile Include="Assets\Scripts\GlobalManager\GlobalManager.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\LuaEnv.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\Context.cs" />
+     <Compile Include="Assets\Scripts\GenericData\IGenericData.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Composites\RandomSelector.cs" />
+     <Compile Include="Assets\Scripts\UI\ActionType.cs" />
+     <Compile Include="Assets\Scripts\Recycle\RecycleList.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\DelegateBridge.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\GenericDelegateBridge.cs" />
+     <Compile Include="Assets\Scripts\GenericData\GenericsData.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\CopyByValue.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\StaticLuaCallbacks.cs" />
+     <Compile Include="Assets\Scripts\UI\UIStore.cs" />
+     <Compile Include="Assets\Scripts\UI\UIStoreCenter.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\BehaviourTreeRunner.cs" />
      <Compile Include="Assets\Scripts\Flux\IAction.cs" />
      <Compile Include="Assets\XLua\Gen\DelegatesGensBridge.cs" />
      <Compile Include="Assets\Scripts\Flux\IStore.cs" />
-     <Compile Include="Assets\Scripts\Flux\IDispatchCenter.cs" />
-     <Compile Include="Assets\Scripts\GenericData\IGenericData.cs" />
-     <Compile Include="Assets\Scripts\Flux\Flux.cs" />
-     <Compile Include="Assets\Scripts\GlobalManager\IInitializeManager.cs" />
-     <Compile Include="Assets\Scripts\GlobalManager\IResetManager.cs" />
-     <Compile Include="Assets\Scripts\GlobalManager\GlobalManager.cs" />
-     <Compile Include="Assets\Scripts\GlobalManager\IUpdateManager.cs" />
-     <Compile Include="Assets\Scripts\Flux\DispatchCenter.cs" />
-     <Compile Include="Assets\Scripts\Recycle\RecycleList.cs" />
-     <Compile Include="Assets\Scripts\GenericData\GenericsData.cs" />
-     <Compile Include="Assets\Scripts\Recycle\IRecycle.cs" />
-     <Compile Include="Assets\Scripts\UI\UIStoreCenter.cs" />
-     <Compile Include="Assets\Scripts\UI\UIStore.cs" />
-     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
-     <Compile Include="Assets\Scripts\UI\IUITransition.cs" />
-     <Compile Include="Assets\Scripts\UI\EUIType.cs" />
-     <Compile Include="Assets\Scripts\Flux\ActionType.cs" />
-     <Compile Include="Assets\Scripts\UI\ActionType.cs" />
+     <Compile Include="Assets\Scripts\Playable\DOTween\IDOTweenUI.cs" />
+     <Compile Include="Assets\Scripts\Playable\DOTween\UIDOTweenBehavior.cs" />
+     <Compile Include="Assets\Scripts\Playable\DOTween\UIDOTweenClip.cs" />
+     <Compile Include="Assets\Scripts\Playable\DOTween\UIDOTweenMixer.cs" />
+     <Compile Include="Assets\Scripts\Playable\DOTween\UITrack.cs" />
      <None Include="Assets\TheKiwiCoder\BehaviourTree\ScriptTemplates\101-BehaviourTree__CompositeNode-NewCompositeNode.cs.txt" />
      <None Include="Assets\TheKiwiCoder\BehaviourTree\UIBuilder\BehaviourTreeEditor.uxml" />
      <None Include="Assets\XLua\Lib\XLua\Resources\xlua\util.lua.txt" />
@@ -380,6 +385,15 @@
      </Reference>
      <Reference Include="Sirenix.Utilities.Editor">
      <HintPath>D:/GitHub/Frame/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="DemiLib">
+     <HintPath>D:/GitHub/Frame/Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTween">
+     <HintPath>D:/GitHub/Frame/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTweenPro">
+     <HintPath>D:/GitHub/Frame/Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.1.26f1c1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -785,6 +799,10 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{0d42b5a0-88e8-1f7e-e5cb-08f7bd2fe108}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Sirenix.OdinInspector.CompatibilityLayer.csproj">
       <Project>{fe9b2eca-8cf2-9e6c-b455-ee77d44dd617}</Project>
       <Name>Sirenix.OdinInspector.CompatibilityLayer</Name>

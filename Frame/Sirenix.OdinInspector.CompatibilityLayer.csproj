@@ -323,6 +323,24 @@
      <Reference Include="Sirenix.Utilities.Editor">
      <HintPath>D:/GitHub/Frame/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="DemiLib">
+     <HintPath>D:/GitHub/Frame/Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTweenProEditor">
+     <HintPath>D:/GitHub/Frame/Assets/Plugins/Demigiant/DOTweenPro/Editor/DOTweenProEditor.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTweenEditor">
+     <HintPath>D:/GitHub/Frame/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll</HintPath>
+     </Reference>
+     <Reference Include="DemiEditor">
+     <HintPath>D:/GitHub/Frame/Assets/Plugins/Demigiant/DemiLib/Core/Editor/DemiEditor.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTween">
+     <HintPath>D:/GitHub/Frame/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+     </Reference>
+     <Reference Include="DOTweenPro">
+     <HintPath>D:/GitHub/Frame/Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+     </Reference>
      <Reference Include="netstandard">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.1.26f1c1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
      </Reference>

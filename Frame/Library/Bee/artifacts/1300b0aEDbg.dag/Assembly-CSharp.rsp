@@ -114,6 +114,9 @@
 -define:ODIN_INSPECTOR_3
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll"
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
+-r:"Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll"
 -r:"Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll"
 -r:"Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll"
 -r:"Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll"
@@ -311,6 +314,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.1.26f1c1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll"
 -r:"D:/GitHub/Frame/Library/PackageCache/com.unity.nuget.newtonsoft-json@2.0.0/Runtime/Newtonsoft.Json.dll"
 -r:"D:/GitHub/Frame/Library/PackageCache/com.unity.visualscripting@1.6.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Sirenix.OdinInspector.CompatibilityLayer.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Sirenix.OdinInspector.CompatibilityLayer.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Sirenix.OdinInspector.Modules.UnityMathematics.ref.dll"
@@ -346,6 +350,11 @@
 "Assets/Scripts/GlobalManager/IInitializeManager.cs"
 "Assets/Scripts/GlobalManager/IResetManager.cs"
 "Assets/Scripts/GlobalManager/IUpdateManager.cs"
+"Assets/Scripts/Playable/DOTween/IDOTweenUI.cs"
+"Assets/Scripts/Playable/DOTween/UIDOTweenBehavior.cs"
+"Assets/Scripts/Playable/DOTween/UIDOTweenClip.cs"
+"Assets/Scripts/Playable/DOTween/UIDOTweenMixer.cs"
+"Assets/Scripts/Playable/DOTween/UITrack.cs"
 "Assets/Scripts/Recycle/IRecycle.cs"
 "Assets/Scripts/Recycle/RecycleList.cs"
 "Assets/Scripts/UI/ActionType.cs"
