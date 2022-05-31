@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace GameFrame.Flux
 {
@@ -8,7 +9,7 @@ namespace GameFrame.Flux
         void BeforeClearDirty();
         void ClearDirty();
         void SetDirty();
-        void ReceiveAction(IAction uiAction);
+        Task ReceiveAction(IAction uiAction);
         void OnAbort();
         void OnUndoable();
         void OnUndo(IStore prevStore);

@@ -21,7 +21,7 @@ namespace GameFrame
             T singleton = SingletonManager.Instance.CreateSingleton<T>();
             _instance = singleton;
 
-            if (singleton is ISyncInitalizeManager syncInitalizeManager)
+            if (singleton is ISyncInitalizeSingleton syncInitalizeManager)
             {
                 try
                 {
@@ -33,7 +33,7 @@ namespace GameFrame
                     Debug.LogError(e);
                 }
             }
-            else if (singleton is ILazyInitializeManager lazyInitializeManager)
+            else if (singleton is ILazyInitializeSingleton lazyInitializeManager)
             {
                 try
                 {
@@ -59,12 +59,12 @@ namespace GameFrame
                             T singleton = SingletonManager.Instance.CreateSingleton<T>();
                             _instance = singleton;
 
-                            if (singleton is ISyncInitalizeManager syncInitalizeManager)
+                            if (singleton is ISyncInitalizeSingleton syncInitalizeManager)
                             {
                                 Debug.LogError($"ISyncInitalizeManager 不能Lazy创建，只能事先创建好后使用{typeof(T).Name}");
                             }
 
-                            else if (singleton is ILazyInitializeManager initializeManager)
+                            else if (singleton is ILazyInitializeSingleton initializeManager)
                             {
                                 try
                                 {

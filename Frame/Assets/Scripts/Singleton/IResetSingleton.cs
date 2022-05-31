@@ -1,6 +1,6 @@
 ﻿namespace GameFrame
 {
-    public interface IResetManager
+    public interface IResetSingleton
     {
         void Reset();
     }

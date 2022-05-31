@@ -80,7 +80,7 @@
      <Compile Include="Assets\XLua\Lib\XLua\Src\InternalGlobals.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\Node.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Composites\Selector.cs" />
-     <Compile Include="Assets\Scripts\Singleton\IUpdateManager.cs" />
+     <Compile Include="Assets\Scripts\Singleton\IUpdateSingleton.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\ObjectTranslatorPool.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\LuaTable.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Runtime\RootNode.cs" />
@@ -99,7 +99,7 @@
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Succeed.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Decorators\Timeout.cs" />
      <Compile Include="Assets\XLua\XLuaManager.cs" />
-     <Compile Include="Assets\Scripts\Singleton\IResetManager.cs" />
+     <Compile Include="Assets\Scripts\Singleton\IResetSingleton.cs" />
      <Compile Include="Assets\Scripts\BaseModule\Recycle\IRecycle.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Actions\Wait.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\GenAttributes.cs" />
@@ -146,6 +146,8 @@
      <Compile Include="Assets\Scripts\UI\Base\Mono\PopUpUI.cs" />
      <Compile Include="Assets\Scripts\Flux\IStoreFactory.cs" />
      <Compile Include="Assets\Scripts\BaseModule\PriorityDelegate.cs" />
+     <Compile Include="Assets\Scripts\BaseModule\MsgPriorityDefine.cs" />
+     <Compile Include="Assets\Scripts\Flux\StoreConfig.cs" />
      <None Include="Assets\TheKiwiCoder\BehaviourTree\ScriptTemplates\101-BehaviourTree__CompositeNode-NewCompositeNode.cs.txt" />
      <None Include="Assets\TheKiwiCoder\BehaviourTree\UIBuilder\BehaviourTreeEditor.uxml" />
      <None Include="Assets\XLua\Lib\XLua\Resources\xlua\util.lua.txt" />

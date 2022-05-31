@@ -7,8 +7,7 @@ namespace GameFrame.UI
     {
         public EuiType  uiType;
         public string   uiName;
-        public string   uiDataName;
-        public string[] childDataName;
+        public string   uiStoreName;
         public string[] preloadAtlas;
         public string[] preloadConfig;
     }

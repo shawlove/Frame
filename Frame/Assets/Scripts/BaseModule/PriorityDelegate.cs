@@ -73,15 +73,15 @@ namespace GameFrame
     {
         public void Invoke()
         {
-            for (int i = 0; i < count; i++)
+            foreach (Action action in actions)
             {
                 try
                 {
-                    actions[i].Invoke();
+                    action.Invoke();
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError($"PriorityDelegate invoke fail => {actions[i].Target.GetType().Name}.{actions[i].Method.Name} : {e}");
+                    Debug.LogError($"PriorityDelegate invoke fail => {action.Target.GetType().Name}.{action.Method.Name} : {e}");
                 }
             }
         }
@@ -91,15 +91,15 @@ namespace GameFrame
     {
         public void Invoke(T param)
         {
-            for (int i = 0; i < count; i++)
+            foreach (Action<T> action in actions)
             {
                 try
                 {
-                    actions[i].Invoke(param);
+                    action.Invoke(param);
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError($"PriorityDelegate invoke fail => {actions[i].Target.GetType().Name}.{actions[i].Method.Name} : {e}");
+                    Debug.LogError($"PriorityDelegate invoke fail => {action.Target.GetType().Name}.{action.Method.Name} : {e}");
                 }
             }
         }
@@ -109,15 +109,15 @@ namespace GameFrame
     {
         public void Invoke(T1 param1, T2 param2)
         {
-            for (int i = 0; i < count; i++)
+            foreach (Action<T1, T2> action in actions)
             {
                 try
                 {
-                    actions[i].Invoke(param1, param2);
+                    action.Invoke(param1, param2);
                 }
                 catch (Exception e)
                 {
-                    Debug.LogError($"PriorityDelegate invoke fail => {actions[i].Target.GetType().Name}.{actions[i].Method.Name} : {e}");
+                    Debug.LogError($"PriorityDelegate invoke fail => {action.Target.GetType().Name}.{action.Method.Name} : {e}");
                 }
             }
         }

@@ -2,17 +2,17 @@
 
 namespace GameFrame
 {
-    public interface IDeInitializeManager
+    public interface IDeInitializeSingleton
     {
         void DeInitialize();
     }
 
-    public interface ILazyInitializeManager : IDeInitializeManager
+    public interface ILazyInitializeSingleton : IDeInitializeSingleton
     {
         void Initialize();
     }
 
-    public interface ISyncInitalizeManager : IDeInitializeManager
+    public interface ISyncInitalizeSingleton : IDeInitializeSingleton
     {
         Task Initialize();
     }

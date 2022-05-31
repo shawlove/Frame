@@ -16,19 +16,19 @@ namespace GameFrame
 
         private Transform _owner;
 
-        private readonly List<IDeInitializeManager> _deInitializeManagers = new List<IDeInitializeManager>();
-        private readonly List<IUpdateManager>       _updateManagers       = new List<IUpdateManager>();
+        private readonly List<IDeInitializeSingleton> _deInitializeManagers = new List<IDeInitializeSingleton>();
+        private readonly List<IUpdateSingleton>       _updateManagers       = new List<IUpdateSingleton>();
 
         public T CreateSingleton<T>() where T : Singleton<T>, new()
         {
             T singleton = new T();
 
-            if (singleton is IDeInitializeManager deInitializeManager)
+            if (singleton is IDeInitializeSingleton deInitializeManager)
             {
                 _deInitializeManagers.Add(deInitializeManager);
             }
 
-            if (singleton is IUpdateManager updateManager)
+            if (singleton is IUpdateSingleton updateManager)
             {
                 _updateManagers.Add(updateManager);
                 SortUpdateManager();
@@ -43,12 +43,12 @@ namespace GameFrame
             obj.transform.SetParent(_owner);
             T singleton = obj.AddComponent<T>();
 
-            if (singleton is IDeInitializeManager deInitializeManager)
+            if (singleton is IDeInitializeSingleton deInitializeManager)
             {
                 _deInitializeManagers.Add(deInitializeManager);
             }
 
-            if (singleton is IUpdateManager updateManager)
+            if (singleton is IUpdateSingleton updateManager)
             {
                 _updateManagers.Add(updateManager);
                 SortUpdateManager();
@@ -61,11 +61,11 @@ namespace GameFrame
         {
             _updateManagers.Sort((l, r) =>
             {
-                if (l.UpdateOrder > r.UpdateOrder)
+                if (l.updateOrder > r.updateOrder)
                 {
                     return 1;
                 }
-                else if (l.UpdateOrder < r.UpdateOrder)
+                else if (l.updateOrder < r.updateOrder)
                 {
                     return -1;
                 }
@@ -91,7 +91,7 @@ namespace GameFrame
 
         public void OnDestroy()
         {
-            foreach (IDeInitializeManager deInitializeManager in _deInitializeManagers)
+            foreach (IDeInitializeSingleton deInitializeManager in _deInitializeManagers)
             {
                 deInitializeManager.DeInitialize();
             }
