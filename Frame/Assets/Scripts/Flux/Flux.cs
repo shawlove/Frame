@@ -1,15 +1,17 @@
 ﻿namespace GameFrame.Flux
 {
-    public class Flux : GlobalManager<Flux>
+    public class Flux : Singleton<Flux>
     {
         public IDispatchCenter DispatchCenter { get; private set; }
 
-        Flux()
+        public Flux()
         {
             DispatchCenter = new DispatchCenter();
 
             //add middleware here
-            DispatchCenter.AddMiddleware(DispatchCenter.DefaultMiddleware);
+            DispatchCenter.AddMiddleware(DispatchCenter.defaultMiddleware);
+
+            DispatchCenter.AddMiddleware(StoreCenter.Instance.Middleware);
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.Playables;
 
 namespace GameFrame
@@ -55,12 +57,25 @@ namespace GameFrame
         }
 
         #endregion
-        
+
+
         public static T GetScriptBehaviour<T>(this Playable playable)
             where T : class, IPlayableBehaviour, new()
         {
             ScriptPlayable<T> scriptPlayable = (ScriptPlayable<T>) playable;
             return scriptPlayable.GetBehaviour();
+        }
+
+        public static void Switch(this CanvasGroup canvasGroup, bool isShow)
+        {
+            canvasGroup.alpha          = isShow ? 1 : 0;
+            canvasGroup.interactable   = isShow;
+            canvasGroup.blocksRaycasts = isShow;
+        }
+
+        public static async void Await(this Task task)
+        {
+            await task;
         }
     }
 }

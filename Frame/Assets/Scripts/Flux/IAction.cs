@@ -4,6 +4,6 @@ namespace GameFrame.Flux
 {
     public interface IAction : IGenericData
     {
-        int ActionType { get; }
+        string ActionType { get; }
     }
 }
