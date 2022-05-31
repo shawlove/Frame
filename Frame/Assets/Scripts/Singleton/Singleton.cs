@@ -21,7 +21,6 @@ namespace GameFrame
             T singleton = SingletonManager.Instance.CreateSingleton<T>();
             _instance = singleton;
 
-            // ReSharper disable once HeapView.PossibleBoxingAllocation
             if (singleton is ISyncInitalizeManager syncInitalizeManager)
             {
                 try
@@ -34,8 +33,6 @@ namespace GameFrame
                     Debug.LogError(e);
                 }
             }
-
-            // ReSharper disable once HeapView.PossibleBoxingAllocation
             else if (singleton is ILazyInitializeManager lazyInitializeManager)
             {
                 try
@@ -62,13 +59,11 @@ namespace GameFrame
                             T singleton = SingletonManager.Instance.CreateSingleton<T>();
                             _instance = singleton;
 
-                            // ReSharper disable once HeapView.PossibleBoxingAllocation
                             if (singleton is ISyncInitalizeManager syncInitalizeManager)
                             {
                                 Debug.LogError($"ISyncInitalizeManager 不能Lazy创建，只能事先创建好后使用{typeof(T).Name}");
                             }
 
-                            // ReSharper disable once HeapView.PossibleBoxingAllocation
                             else if (singleton is ILazyInitializeManager initializeManager)
                             {
                                 try

@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using UnityEngine;
 using UnityEngine.Playables;
 
 namespace GameFrame
@@ -61,6 +62,13 @@ namespace GameFrame
         {
             ScriptPlayable<T> scriptPlayable = (ScriptPlayable<T>) playable;
             return scriptPlayable.GetBehaviour();
+        }
+
+        public static void Switch(this CanvasGroup canvasGroup,bool isShow)
+        {
+            canvasGroup.alpha          = isShow ? 1 : 0;
+            canvasGroup.interactable   = isShow;
+            canvasGroup.blocksRaycasts = isShow;
         }
     }
 }
