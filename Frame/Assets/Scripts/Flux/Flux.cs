@@ -10,6 +10,8 @@
 
             //add middleware here
             DispatchCenter.AddMiddleware(DispatchCenter.defaultMiddleware);
+
+            DispatchCenter.AddMiddleware(StoreCenter.Instance.Middleware);
         }
     }
 }
