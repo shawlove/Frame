@@ -8,5 +8,10 @@ namespace GameFrame.UI
         {
             
         }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }

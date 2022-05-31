@@ -2,6 +2,9 @@
 
 namespace GameFrame.UI
 {
+    /// <summary>
+    /// return can be null
+    /// </summary>
     public delegate Task UITransitionEnd();
 
     public interface IUITransition

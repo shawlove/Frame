@@ -1,6 +1,8 @@
-﻿namespace GameFrame.Flux
+﻿using System;
+
+namespace GameFrame.Flux
 {
-    public interface IStore
+    public interface IStore : ICloneable
     {
         void Receive(IAction action);
     }

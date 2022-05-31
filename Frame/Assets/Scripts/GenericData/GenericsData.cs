@@ -6,7 +6,7 @@ namespace GameFrame.GenericData
     {
         public int Index { get; set; }
 
-        public T Data1;
+        private T Data1;
 
         public GenericsData<T> SetData(T data)
         {
@@ -22,11 +22,6 @@ namespace GameFrame.GenericData
         public override string ToString()
         {
             return "<color=#708FFE>Data1:</color> " + Data1;
-        }
-
-        public static GenericsData<T> Get()
-        {
-            return RecycleList<GenericsData<T>>.Get();
         }
 
         public void Recycle()
@@ -58,6 +53,11 @@ namespace GameFrame.GenericData
         {
             return default;
         }
+
+        public static IGenericData G(T t)
+        {
+            return RecycleList<GenericsData<T>>.Get().SetData(t);
+        }
     }
 
     public class GenericsData<T1, T2> : IGenericData
@@ -83,11 +83,6 @@ namespace GameFrame.GenericData
         public override string ToString()
         {
             return "<color=#708FFE>Data1:</color> " + Data1 + "<color=#708FFE>Data2:</color> " + Data2;
-        }
-
-        public static GenericsData<T1, T2> Get()
-        {
-            return RecycleList<GenericsData<T1, T2>>.Get();
         }
 
         public void Recycle()
@@ -124,6 +119,11 @@ namespace GameFrame.GenericData
         {
             return default;
         }
+
+        public static IGenericData G((T1 t1, T2 t2) tuple)
+        {
+            return RecycleList<GenericsData<T1, T2>>.Get().SetData(tuple.t1, tuple.t2);
+        }
     }
 
     public class GenericsData<T1, T2, T3> : IGenericData
@@ -152,11 +152,6 @@ namespace GameFrame.GenericData
         public override string ToString()
         {
             return "<color=#708FFE>Data1:</color> " + Data1 + "<color=#708FFE>Data2:</color> " + Data2 + "<color=#708FFE>Data3:</color> " + Data3;
-        }
-
-        public static GenericsData<T1, T2, T3> Get()
-        {
-            return RecycleList<GenericsData<T1, T2, T3>>.Get();
         }
 
         public void Recycle()
@@ -197,6 +192,11 @@ namespace GameFrame.GenericData
         public T GetData4<T>()
         {
             return default;
+        }
+
+        public static IGenericData G((T1 t1, T2 t2, T3 t3) tuple)
+        {
+            return RecycleList<GenericsData<T1, T2, T3>>.Get().SetData(tuple.t1, tuple.t2, tuple.t3);
         }
     }
 
@@ -280,6 +280,11 @@ namespace GameFrame.GenericData
             }
 
             return default;
+        }
+
+        public static IGenericData G((T1 t1, T2 t2, T3 t3, T4 t4) tuple)
+        {
+            return RecycleList<GenericsData<T1, T2, T3, T4>>.Get().SetData(tuple.t1, tuple.t2, tuple.t3, tuple.t4);
         }
     }
 }

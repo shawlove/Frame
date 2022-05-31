@@ -4,7 +4,7 @@ using GameFrame.Flux;
 
 namespace GameFrame.UI
 {
-    public class UIManager : GlobalManager<UIManager>
+    public class UIManager : MonoSingleton<UIManager>
     {
         private readonly HashSet<IUITransition> _uiTransitions = new HashSet<IUITransition>();
 

@@ -2,6 +2,6 @@
 {
     public partial class ActionType
     {
-        public const int OPEN_UI = 1;
+        public const string OPEN_UI = nameof(OPEN_UI);
     }
 }

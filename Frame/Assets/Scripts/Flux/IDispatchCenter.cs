@@ -10,6 +10,6 @@ namespace GameFrame.Flux
 
         Task Dispatch(IAction action);
 
-        Middleware DefaultMiddleware { get; }
+        Middleware defaultMiddleware { get; }
     }
 }

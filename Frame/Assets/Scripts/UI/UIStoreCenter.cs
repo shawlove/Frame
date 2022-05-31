@@ -1,6 +1,6 @@
 ﻿namespace GameFrame.UI
 {
-    public class UIStoreCenter : GlobalManager<UIStoreCenter>
+    public class UIStoreCenter : Singleton<UIStoreCenter>
     {
         
     }
