@@ -4,11 +4,13 @@ using UnityEngine;
 
 namespace GameFrame
 {
-    public abstract class PriorityDelegateBase<TDelegate> where TDelegate : Delegate
+    public abstract class PriorityDelegateBase<TDelegate> where TDelegate : MulticastDelegate
     {
-        protected readonly List<TDelegate> actions  = new List<TDelegate>();
-        protected readonly List<int>       priority = new List<int>();
-        protected          int             count    = 0;
+        private readonly List<TDelegate> _actions  = new List<TDelegate>();
+        private readonly List<int>       _priority = new List<int>();
+        private          int             _count    = 0;
+
+        private readonly List<TDelegate> _invokeList = new List<TDelegate>();
 
         ~PriorityDelegateBase()
         {
@@ -25,16 +27,16 @@ namespace GameFrame
                 Debug.LogWarning("Do not register empty delegate callbacks");
                 return;
             }
-            else if (actions.Contains(rCallback))
+            else if (_actions.Contains(rCallback))
             {
                 Debug.LogWarning($"Do not register delegate callbacks twice => {rCallback.Target.GetType().Name}.{rCallback.Method.Name}");
                 return;
             }
 
             int insertIndex = 0;
-            while (insertIndex < count)
+            while (insertIndex < _count)
             {
-                if (priority[insertIndex] > sPriority)
+                if (_priority[insertIndex] > sPriority)
                 {
                     break;
                 }
@@ -42,20 +44,20 @@ namespace GameFrame
                 insertIndex++;
             }
 
-            actions.Insert(insertIndex, rCallback);
-            priority.Insert(insertIndex, sPriority);
-            count++;
+            _actions.Insert(insertIndex, rCallback);
+            _priority.Insert(insertIndex, sPriority);
+            _count++;
         }
 
         public void RemoveListener(TDelegate rCallback)
         {
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < _count; i++)
             {
-                if (actions[i].Equals(rCallback))
+                if (_actions[i].Equals(rCallback))
                 {
-                    actions.RemoveAt(i);
-                    priority.RemoveAt(i);
-                    count--;
+                    _actions.RemoveAt(i);
+                    _priority.RemoveAt(i);
+                    _count--;
                     break;
                 }
             }
@@ -63,9 +65,16 @@ namespace GameFrame
 
         public void RemoveAll()
         {
-            actions.Clear();
-            priority.Clear();
-            count = 0;
+            _actions.Clear();
+            _priority.Clear();
+            _count = 0;
+        }
+
+        protected IEnumerable<TDelegate> GetInvokeList()
+        {
+            _invokeList.Clear();
+            _invokeList.AddRange(_actions);
+            return _invokeList;
         }
     }
 
@@ -73,7 +82,7 @@ namespace GameFrame
     {
         public void Invoke()
         {
-            foreach (Action action in actions)
+            foreach (Action action in GetInvokeList())
             {
                 try
                 {
@@ -91,7 +100,7 @@ namespace GameFrame
     {
         public void Invoke(T param)
         {
-            foreach (Action<T> action in actions)
+            foreach (Action<T> action in GetInvokeList())
             {
                 try
                 {
@@ -109,7 +118,7 @@ namespace GameFrame
     {
         public void Invoke(T1 param1, T2 param2)
         {
-            foreach (Action<T1, T2> action in actions)
+            foreach (Action<T1, T2> action in GetInvokeList())
             {
                 try
                 {
