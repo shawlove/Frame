@@ -41,8 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Config\IConfig.cs" />
      <Compile Include="Assets\Scripts\UI\UITransition\IUITransition.cs" />
-     <Compile Include="Assets\Scripts\BaseModule\Config\IConfig.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\util\Xxtea.cs" />
      <Compile Include="Assets\XLua\Lib\XLua\Src\LuaDLL.cs" />
      <Compile Include="Assets\TheKiwiCoder\BehaviourTree\Scripts\Actions\MoveToPosition.cs" />
